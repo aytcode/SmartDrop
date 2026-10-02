@@ -1,0 +1,6 @@
+{
+  "name": "SmartDrop - Akıllı Dosya Düzenleyici",
+  "description": "Windows için PySide6 tabanlı akıllı dosya analiz, güvenli kategorizasyon, önizleme ve geri alma (undo) uygulaması.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
