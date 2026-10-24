@@ -4,6 +4,12 @@ import path from "path";
 import fs from "fs";
 import { exec, spawn } from "child_process";
 import { promisify } from "util";
+import { fileURLToPath } from "url";
+
+// The web UI lives in web/, but it drives the Python package at the repo
+// root (python -m smartdrop.cli, scripts/, test_data/), so run from there.
+const WEB_DIR = path.dirname(fileURLToPath(import.meta.url));
+process.chdir(path.resolve(WEB_DIR, ".."));
 
 const execAsync = promisify(exec);
 const app = express();
@@ -239,13 +245,16 @@ app.get("/api/download-zip", async (req, res) => {
 });
 
 async function start() {
-  if (process.env.NODE_ENV === "production" && fs.existsSync(path.resolve("dist"))) {
-    app.use(express.static(path.resolve("dist")));
+  const distDir = path.join(WEB_DIR, "dist");
+  if (process.env.NODE_ENV === "production" && fs.existsSync(distDir)) {
+    app.use(express.static(distDir));
     app.get("*", (req, res) => {
-      res.sendFile(path.resolve("dist/index.html"));
+      res.sendFile(path.join(distDir, "index.html"));
     });
   } else {
     const vite = await createViteServer({
+      root: WEB_DIR,
+      configFile: path.join(WEB_DIR, "vite.config.ts"),
       server: { middlewareMode: true },
       appType: "spa",
     });

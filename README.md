@@ -185,11 +185,17 @@ smartdrop/
 ├── models/
 ├── services/
 ├── utils/
-├── tests/
+├── tests/              Unit tests for the engine
 └── ui/
 
+tests/                  Integration tests (pytest)
 tools/
 └── create_test_data.py
+scripts/
+└── package_zip.py      Builds SmartDrop-Windows.zip
+sample_files/           Dummy files of every category for manual testing
+web/                    Optional React + Express web UI (npm install, npm run dev)
+└── src/
 
 app.py
 requirements.txt
