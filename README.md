@@ -205,6 +205,16 @@ README.md
 LICENSE
 ```
 
+## 🛡️ VirusTotal
+
+[![VirusTotal](https://img.shields.io/badge/VirusTotal-0%2F93%20temiz-brightgreen?logo=virustotal&logoColor=white)](https://www.virustotal.com/gui/url/da6fb9506bc955dde8b9a9f6a04208b52a76753b87bb22e881be79bf80194e83)
+
+Dosyalar [VirusTotal](https://www.virustotal.com) ile tarandı; hiçbir antivirüs motoru tehdit bulmadı.
+
+| Taranan | Sonuç | Tarih | Rapor |
+|---|---|---|---|
+| Kaynak kod (`main.zip`) | **0/93** temiz | 24.10.2026 | [Raporu gör](https://www.virustotal.com/gui/url/da6fb9506bc955dde8b9a9f6a04208b52a76753b87bb22e881be79bf80194e83) |
+
 ## License
 
 SmartDrop is released under the MIT License. See [LICENSE](LICENSE) for the full text.
